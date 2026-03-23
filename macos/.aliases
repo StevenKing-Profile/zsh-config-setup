@@ -1,0 +1,15 @@
+# --- AWS Aliases ---
+alias a="aws"
+alias as3="aws s3"
+alias aec2="aws ec2"
+
+# --- GitLab Aliases ---
+alias gl="glab"
+alias glmr="glab mr"
+alias glp="glab pipeline"
+alias glc="glab ci"
+
+# --- Navigation & Utilities ---
+alias ll="ls -lah"
+alias ..="cd .."
+alias ...="cd ../.."

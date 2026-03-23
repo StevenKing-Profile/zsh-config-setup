@@ -1,0 +1,22 @@
+# Generate a zsh reference file
+export_config() {
+    local timestamp=$(date +%Y%m%d_%H%M%S)
+    local out_file="$HOME/zsh_config_reference_${timestamp}.txt"
+    
+    echo "=== .aliases ===" > "$out_file"
+    [ -f "$HOME/.aliases" ] && cat "$HOME/.aliases" >> "$out_file" || echo "No .aliases found." >> "$out_file"
+    
+    echo -e "\n\n=== .functions ===" >> "$out_file"
+    [ -f "$HOME/.functions" ] && cat "$HOME/.functions" >> "$out_file" || echo "No .functions found." >> "$out_file"
+    
+    echo -e "\n\n=== CURRENT ACTIVE ALIASES (Includes Plugins) ===" >> "$out_file"
+    alias >> "$out_file"
+    
+    echo -e "\n\n=== .zshrc ===" >> "$out_file"
+    [ -f "$HOME/.zshrc" ] && cat "$HOME/.zshrc" >> "$out_file" || echo "No .zshrc found." >> "$out_file"
+    
+    echo -e "\n\n=== .zshenv ===" >> "$out_file"
+    [ -f "$HOME/.zshenv" ] && cat "$HOME/.zshenv" >> "$out_file" || echo "No .zshenv found." >> "$out_file"
+    
+    echo "Configuration exported to: $out_file"
+}
